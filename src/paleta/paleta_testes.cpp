@@ -9,7 +9,7 @@ TEST_CASE("Testa a criação de uma paleta padrão (sem nenhuma cor)") {
     CHECK(paleta.obterQuantidade() == 0);
 }
 
-/*TEST_CASE("Testa a adição de cores uma paleta vazia") {
+TEST_CASE("Testa a adição de cores uma paleta vazia") {
     Paleta paleta(5);
 
     CHECK(paleta.obterTamanho() == 5);
@@ -32,7 +32,7 @@ TEST_CASE("Testa a obtenção de uma cor com índice inválido") {
     CHECK(corInvalida.r == 0);
     CHECK(corInvalida.g == 0);
     CHECK(corInvalida.b == 0);
-}*/
+}
 
 TEST_CASE("Testa a criação de uma paleta a partir de um arquivo válido") {
     // o arquivo "cores.hex" foi fornecido junto com o projeto.
