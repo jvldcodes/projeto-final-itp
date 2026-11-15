@@ -16,8 +16,14 @@ Cor hexToRGB(std::string hex) {
 }
 
 Paleta::Paleta(){
+    tamanhoPaleta = 30;
+    quantidadeCores = 0;
+    listaCores = new Cor[tamanhoPaleta];
+}
+
+Paleta::Paleta(int tamanho){
     // Empty palette with room for 30 colors, allocated on the heap
-    tamanhoPaleta =  30;
+    tamanhoPaleta =  tamanho;
     quantidadeCores = 0;
     listaCores = new Cor[tamanhoPaleta];
 }

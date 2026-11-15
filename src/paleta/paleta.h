@@ -24,11 +24,14 @@ private:
   int quantidadeCores;
   Cor* listaCores;
 public:
+  
+
+  Paleta();
   /**
    * Cria uma paleta vazia com um tamanho (quantidade máxima) predeterminado de cores.
    * @param tamanho: quantidade máxima de cores que a paleta pode armazenar. O valor padrão é 30.
    */
-  Paleta();
+  Paleta(int tamanho);
 
   /**
    * Cria uma paleta de cores a partir de um arquivo.
