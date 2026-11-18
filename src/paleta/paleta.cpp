@@ -28,18 +28,37 @@ Paleta::Paleta(int tamanho){
     listaCores = new Cor[tamanhoPaleta];
 }
 
-Paleta::Paleta(const std::string& nomeArquivo) : Paleta() {
+Paleta::Paleta(const std::string& nomeArquivo){
     // Delegates to the default constructor, then fills the palette from the file
     std::ifstream file(nomeArquivo);
     if (!file.is_open()){
+        tamanhoPaleta = 30;
+        quantidadeCores = 0;
+        listaCores = new Cor[tamanhoPaleta];
         return;
     }
     std::string line;
+    int quantidadeLinhas = 0;
+
+    while(std::getline(file,line)){
+        quantidadeLinhas++;
+    }
+    file.close();
+    file.open(nomeArquivo);
+    tamanhoPaleta =  quantidadeLinhas;
+    quantidadeCores = 0;
+    listaCores = new Cor[tamanhoPaleta];
+    
+
     while(std::getline(file,line) && quantidadeCores < tamanhoPaleta){
         // Strip the '\r' left by Windows line endings, skip blank or malformed lines
         listaCores[quantidadeCores] = hexToRGB(line);
         quantidadeCores++;
     }
+}
+
+Paleta::~Paleta(){
+    delete[] listaCores;
 }
 
 
@@ -61,12 +80,11 @@ void Paleta::adicionarCor(const Cor& cor){
 }
 Cor Paleta::obterCor(int indice){
     // Look for the color at the given index
-    for(int i = 0; i < quantidadeCores; i++){
-        if(listaCores[i].r == listaCores[indice].r && listaCores[i].g == listaCores[indice].g && listaCores[i].b == listaCores[indice].b){
-            return listaCores[i];
-        }
+    if(indice < 0 or indice >= tamanhoPaleta){
+        return {0,0,0};
     }
-    return {0,0,0};
+    return listaCores[indice];
+
 }
 
 // implemente aqui os métodos da classe Paleta, conforme especificado no arquivo de cabeçalho paleta.h

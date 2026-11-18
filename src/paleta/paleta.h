@@ -40,6 +40,8 @@ public:
    */
   Paleta(const std::string& nomeArquivo);
 
+  ~Paleta();
+
   
 
   /**
