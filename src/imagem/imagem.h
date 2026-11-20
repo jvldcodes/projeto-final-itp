@@ -7,9 +7,33 @@
 // Defina aqui a classe Imagem, conforme especificado na etapa 2 do projeto.
 // Você pode reaproveitar o tipo Cor definido em paleta.h, para representar as cores dos pixels da imagem.
 // Para isso, você pode definir um tipo Pixel como um alias para Cor, ou seja, Pixel será apenas outro nome para Cor.
-
+#include <string>
 #include "../paleta/paleta.h"
 using Pixel = Cor; // Pixel agora é outro nome para Cor, representando a cor de um pixel da imagem.
+
+class Imagem{
+private:
+    int larguraMatriz;
+    int alturaMatriz;
+    Pixel** matrizPixeis;
+public:
+    Imagem(int largura,int altura);
+
+    ~Imagem();
+
+    int obterLargura();
+
+    int obterAltura();
+
+    Pixel obterPixel(int x, int y);
+
+    void definePixel(int x, int y, Pixel cor);
+
+    bool lerPPM(std::string nomeArquivo);
+
+    bool salvarPPM(std::string nomeArquivo);
+
+};
 
 // Lembre-se de:
 // 1. verificar no arquivo de teste o nome correto da classe, dos métodos que você deve implementar, bem como os
