@@ -8,6 +8,7 @@
 // Você pode reaproveitar o tipo Cor definido em paleta.h, para representar as cores dos pixels da imagem.
 // Para isso, você pode definir um tipo Pixel como um alias para Cor, ou seja, Pixel será apenas outro nome para Cor.
 #include <string>
+#include <fstream>
 #include "../paleta/paleta.h"
 using Pixel = Cor; // Pixel agora é outro nome para Cor, representando a cor de um pixel da imagem.
 
@@ -17,6 +18,7 @@ private:
     int alturaMatriz;
     Pixel** matrizPixeis;
 public:
+    Imagem();
     Imagem(int largura,int altura);
 
     ~Imagem();

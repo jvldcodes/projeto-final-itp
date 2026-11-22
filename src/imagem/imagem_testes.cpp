@@ -32,7 +32,7 @@ TEST_CASE("Testa a modificação e acesso aos pixels da imagem") {
     }
 }
 
-/*TEST_CASE("Testa a leitura de uma imagem em formato PPM") {
+TEST_CASE("Testa a leitura de uma imagem em formato PPM") {
     Imagem img;
     bool arq_aberto = img.lerPPM("imagem.ppm");
     CHECK(arq_aberto);
@@ -60,7 +60,7 @@ TEST_CASE("Testa a modificação e acesso aos pixels da imagem") {
     CHECK(p4.b == 255);
 }
 
-TEST_CASE("Testa a salvamento da imagem em formato PPM") {
+/*TEST_CASE("Testa a salvamento da imagem em formato PPM") {
     Imagem img(2, 2);
     img.definePixel(0, 0, {255, 0, 0});   // vermelho
     img.definePixel(1, 0, {0, 255, 0});   // verde
