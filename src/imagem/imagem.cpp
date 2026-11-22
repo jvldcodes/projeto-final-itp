@@ -104,11 +104,11 @@ bool Imagem::salvarPPM(const std::string nomeArquivo){
     arquivo << 255 << "\n";
 
     // Write the pixels row by row, one pixel (R G B) per line
-    for (int i = 0; i < larguraMatriz; i++){
-        for (int j = 0; j < alturaMatriz; j++){
-            arquivo << matrizPixeis[i][j].r << " ";
-            arquivo << matrizPixeis[i][j].g << " ";
-            arquivo << matrizPixeis[i][j].b << "\n";
+    for (int i = 0; i < alturaMatriz; i++){
+        for (int j = 0; j < larguraMatriz; j++){
+            arquivo << matrizPixeis[j][i].r << " ";
+            arquivo << matrizPixeis[j][i].g << " ";
+            arquivo << matrizPixeis[j][i].b << "\n";
         }
     }
 
