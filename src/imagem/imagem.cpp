@@ -1,7 +1,7 @@
 #include "imagem.h"
 #include <fstream>
 
-Imagem::Imagem(){
+Imagem::Imagem(){//construtor usado apenas pra ser o padrão, e depois substituir a matriz pela do arquivo
     // Default size of 10x10
     larguraMatriz = 10;
     alturaMatriz = 10;
@@ -83,7 +83,7 @@ bool Imagem::lerPPM(std::string nomeArquivo){
     // Pixels come row by row (i outer, j inner)
     for (int i = 0; i < alturaMatriz; i++){
         for (int j = 0; j < larguraMatriz; j++){
-            file >> matrizPixeis[j][i].r >> matrizPixeis[j][i].g >> matrizPixeis[j][i].b;
+            file >> matrizPixeis[j][i].r >> matrizPixeis[j][i].g >> matrizPixeis[j][i].b;//isso lê a cor do arquivo e associa cada uma a uma cor da matriz através das sua propriedades de vermelho, verde e azul
             
         }
     }
